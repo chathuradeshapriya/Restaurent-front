@@ -1,0 +1,68 @@
+<nav>
+        <div class="nav-wrapper indigo darken-1">
+          
+          <!--<img src="../../../../assets/images/student/student.png" width="60px" height="60px">--><img src="../../../../assets/images/student/NEW-LOGO-crp.png" width="350px" height="60px">
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#home">Home</a></li>
+            <li><a [routerLink]="['/admin_dashboard']"><i class="material-icons">dashboard</i></a></li>
+            
+            <li><a href=""><i class="material-icons">settings</i></a></li>
+            <li><a href=""><i class="material-icons">account_circle</i></a></li>
+          </ul>
+        </div>
+</nav>
+
+
+
+<div class="container">
+
+    <h3>Exam Marks</h3><br><br>
+    
+    <h5>Select Course</h5>
+    <div class="input-field col s6">
+        <select  class="browser-default" [(ngModel)]="course" >
+                    
+              <!-- <option  selected>select chat group</option>  -->
+              <option *ngFor="let item of coursearray" value={{item.course}} >{{item.course}}</option>
+                                 
+       </select>
+                
+    </div>
+
+    <form>
+      <div class="card-panel blue lighten-5">
+        <div class="card-content black-text">
+            <form action="#">
+                <table>
+
+                  <h5>{{this.course}}</h5>
+                
+                  <tr>
+                    
+                    <th>Full Name</th>
+                    <th>Username</th>
+                    <th>Marks</th>
+                  </tr>
+                
+                <tr *ngFor="let sts of enrollmentService.studentarray">
+                  
+                  <td>{{sts.fullname}}</td>
+                  <td>{{sts.username}}</td>
+                  <td></td>
+                  
+                </tr>
+              </table>
+              </form>
+        
+        </div>
+      </div>
+    </form>
+
+
+</div><!--container-->
+
+
+<!-- Footer -->
+<footer class="footer section indigo darken-3 white-text center">
+    <p class="flow-text">VICERANT IT Solutions &copy; 2018</p>
+</footer>

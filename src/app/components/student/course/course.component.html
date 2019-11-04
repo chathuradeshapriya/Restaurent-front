@@ -1,0 +1,41 @@
+<main> 
+        <app-student-navbar></app-student-navbar>
+        <app-student-sidenav></app-student-sidenav>
+
+      <div class="container">
+
+        <h3>Files</h3>
+        <h4>Course : {{course}}</h4>
+
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>File Name</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let f of fileService.files">
+                <td>{{ f.filename }}</td>
+                <td><a target="_blank" href="http://localhost:3000/{{f?.file}}">Click Here</a></td>
+              </tr>   
+            </tbody>
+          </table>
+
+      </div>
+
+    </main>
+ 
+
+<!-- Footer -->
+
+
+
+<footer class="section teal darken-2 white-text center">
+        <p class="flow-text">VICERANT IT Solutions &copy; 2019</p>
+</footer>
+
+
+
+
+
